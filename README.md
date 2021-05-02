@@ -4,7 +4,7 @@
 Given an m * n boolean matrix B, find its largest square submatrix (k * k matrix) whose elements are all zeros. Describe a dynamic programming algorithm for solving this problem.
 
 # Implementation 
-We have been given the problem to find a Sub-Square Matrix k x k inside a randomly generated Boolean Matrix B with size m x n which contains all 0s. In our algorithm, we initialize a Sub-Problem matrix S which will store the solution for each recursive sub-problem. 
+We have been given the problem to find a Sub-Square Matrix k x k inside a randomly generated Boolean Matrix B with size m x n which contains all 0s. In the algorithm, I have initialized a Sub-Problem matrix S which will store the solution for each recursive sub-problem. 
 The sub-problem matrix S is filled with values from first row and first column of matrix B, respectively, while rest of the elements of S are left vacant. The algorithm computes the maximum of left, top, and top-left value corresponding to the column element E from matrix S, if E = 0 in Boolean matrix B. The maximum value is then decremented by 1 and is stored at the same position in matrix S where E is stored in matrix B. If the column element E = 1 in Boolean matrix B, then 1 is stored at the same position where E=1 is encountered in matrix B. The recursion continues until the Sub-Problem matrix S is filled. 
 The sub-square matrix with all 0s in B would be represented as a sub-square matrix with elements less than or equal to 0. The position of the minimum element in S is recorded, and matrix B is traversed bottom-up to return the sub-square matrix with size k x k containing all 0s. 
 
